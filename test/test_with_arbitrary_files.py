@@ -8,10 +8,6 @@
 
 # COMMAND ----------
 
-sys.path.append(os.path.abspath('/Workspace/Repos/<username>/supplemental_files'))
-
-# COMMAND ----------
-
 from src.my_package.code1 import * # instead of %run ./Code1
 from src.my_package.code2 import * # instead of %run ./Code2
 
