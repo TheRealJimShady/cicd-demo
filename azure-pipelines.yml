@@ -82,7 +82,7 @@ stages:
       displayName: 'Update Staging project'
 
     - script: |
-        nutter run "$(STAGING_DIRECTORY)/unit-tests/" --cluster_id $(CLUSTER_ID) --recursive --junit_report --timeout 500
+        nutter run "$(STAGING_DIRECTORY)/test/" --cluster_id $(CLUSTER_ID) --recursive --junit_report --timeout 500
       env:
         DATABRICKS_HOST: $(DATABRICKS_HOST)
         DATABRICKS_TOKEN: $(DATABRICKS_TOKEN)
@@ -133,7 +133,7 @@ stages:
 
 # We can do a separate set of the tests for release branches
       - script: |
-          nutter run "$(STAGING_DIRECTORY)/unit-tests" --cluster_id $(CLUSTER_ID) --recursive --junit_report --timeout 500
+          nutter run "$(STAGING_DIRECTORY)/test" --cluster_id $(CLUSTER_ID) --recursive --junit_report --timeout 500
         env:
           DATABRICKS_HOST: $(DATABRICKS_HOST)
           DATABRICKS_TOKEN: $(DATABRICKS_TOKEN)
